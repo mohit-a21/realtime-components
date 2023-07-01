@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: realtime_component_server
+    command: ./start-server.sh
+    ports:
+      - 8000:8000
+    environment:
+      - "DEBUG_SERVER=False"
+      - "LIMITER_STORAGE=redis://redis:6379/0"
+      - "OPENAI_API_KEY="
