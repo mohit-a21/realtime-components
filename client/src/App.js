@@ -45,6 +45,8 @@ export default function App() {
     defaultColors.sort(() => 0.5 - Math.random()).slice(0, 5)
   );
 
+  const [reason, setReason] = useState("")
+
   useEffect(() => {
     if (text) {
       const fetchData = async () => {
@@ -64,6 +66,7 @@ export default function App() {
             response.data.secondary,
             response.data.accent
           ]);
+          setReason(response.data.reason);
           setLoading(false);
         } catch (error) {
           console.error(error);
@@ -89,7 +92,7 @@ export default function App() {
     <div className="App" style={{background: background}}>
       <div>
         <h1 style={{color: generateContrastingColor(background)}}>
-          Add a text prompt to generate a color palette for the theme defined in the prompt
+          Give a text prompt for a theme to generate a color palette using chat gpt
         </h1>
       </div>
       <div>
@@ -121,7 +124,9 @@ export default function App() {
             />
             <CopyToClipboard text={`color: ${color};`}>
               <p
-                style={{color: color === background ? "#fff" : color}}
+                style={{
+                  color: color === background ? "#fff" : color
+              }}
                 onClick={() => setCurrent(color)}
               >
                 {color}
@@ -129,6 +134,12 @@ export default function App() {
             </CopyToClipboard>
           </div>
         ))}
+        <div>
+
+          <p style={{color: generateContrastingColor(background), }} align={"justify"} >
+            {reason ? reason : null}
+          </p>
+        </div>
       </div>
       <div>
         <a href={linkGenerator("https://realtimecolors.com/?colors=", colors)} target={"_blank"}>
