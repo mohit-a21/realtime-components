@@ -8,7 +8,7 @@ class ColorPallet(BaseModel):
     primary: str = Field(description="Primary color of the page which follows the theme in hexadecimal format.")
     secondary: str = Field(description="Secondary color of the page which follows the theme in hexadecimal format.")
     accent: str = Field(description="Accent of the theme of the page which follows the theme in hexadecimal format.")
-    reason: str = Field(description="Reason for the color pallet and how it follows the theme")
+    reason: str = Field(description="Reason for how the color pallet follows the theme")
 
     def __str__(self):
         return f"Text: {self.text}\nBackground: {self.background}\nPrimary: {self.primary}\nSecondary: {self.secondary}\nAccent: {self.accent}"
