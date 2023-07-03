@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./TextBox.css"; // Import the CSS file for styling
 
-const TextBox = ({ onSubmit }) => {
+const TextBox = ({ onTextChange, onSubmit }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+    onTextChange(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -22,6 +23,7 @@ const TextBox = ({ onSubmit }) => {
         onChange={handleInputChange}
         className="textbox-input"
         placeholder="Enter your text"
+        contentEditable={true}
       />
       <button
         type="submit"
