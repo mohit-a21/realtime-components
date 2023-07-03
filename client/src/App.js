@@ -190,7 +190,7 @@ export default function App() {
             <h2 style={{color: generateContrastingColor(background)}}>
               Coolors
             </h2>
-          </a>>
+          </a>
         </div>
 
         <div>
@@ -198,7 +198,7 @@ export default function App() {
             <h2 style={{color: generateContrastingColor(background)}}>
               Muzli Palette
             </h2>
-          </a>>
+          </a>
         </div>
       </div>
     </div>

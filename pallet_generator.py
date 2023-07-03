@@ -23,6 +23,7 @@ secondary color of buttons,
 
 All color codes should be different.
 There should be some core colors that are used on the website, and some accent colors that are used for buttons and other elements.
+The contrast ratio of text, accent, primary and secondary colors to background color should be at least 7:1.
 Color are going to be used on a website where the theme can be defined"""
 
 keyword_prompt = f"""
